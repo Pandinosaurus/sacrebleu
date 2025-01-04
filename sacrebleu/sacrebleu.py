@@ -50,7 +50,7 @@ sacrelogger = logging.getLogger('sacrebleu')
 
 try:
     # SIGPIPE is not available on Windows machines, throwing an exception.
-    from signal import SIGPIPE
+    from signal import SIGPIPE  # type: ignore
 
     # If SIGPIPE is available, change behaviour to default instead of ignore.
     from signal import signal, SIG_DFL
@@ -242,8 +242,7 @@ def main():
 
     if args.list:
         if args.test_set:
-            langpairs = get_langpairs_for_testset(args.test_set)
-            for pair in langpairs:
+            for pair in [args.langpair] if args.langpair else get_langpairs_for_testset(args.test_set):
                 fields = DATASETS[args.test_set].fieldnames(pair)
                 print(f'{pair}: {", ".join(fields)}')
         else:

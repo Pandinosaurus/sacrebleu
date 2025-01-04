@@ -50,7 +50,7 @@ $ sacrebleu -i output.detok.txt -t wmt17 -l en-de | jq -r .score
 
 # Installation
 
-Install the official Python module from PyPI (**Python>=3.6 only**):
+Install the official Python module from PyPI (**Python>=3.8 only**):
 
     pip install sacrebleu
 
@@ -635,7 +635,7 @@ SacreBLEU is licensed under the [Apache 2.0 License](LICENSE.txt).
 
 # Credits
 
-This was all Rico Sennrich's idea.
+This was all [Rico Sennrich's idea](https://twitter.com/RicoSennrich/status/883246242763026433)
 Originally written by Matt Post.
 New features and ongoing support provided by Martin Popel (@martinpopel) and Ozan Caglayan (@ozancaglayan).
 
